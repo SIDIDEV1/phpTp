@@ -15,12 +15,13 @@ if (isset($_POST['pseudo'], $_POST['pass'])) {
     $resultat = $req->fetch();
 
     if (!$resultat) {
-        echo 'Mauvais identifiant ou mot de passe !';
+        echo 'Mauvais identifiant ou mot de passe ! <br>';
+        echo '<a href="index.php">Retour</a>';
     } else {
         session_start();
         $_SESSION['id'] = $resultat['id'];
         $_SESSION['pseudo'] = $pseudo;
-        echo 'Vous êtes connecté !';
+        echo 'Vous êtes connecté ! <br>';
         echo '<a href="index.php">Retour à l\'accueil</a>';
     }
 } else {
